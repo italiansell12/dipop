@@ -1,0 +1,426 @@
+@import "_media-queries";
+@import "_colors";
+
+/* GENERAL */
+html,body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+}
+a:hover { text-decoration: none;  }
+img { max-width: 100%;  }
+.container.con {
+    max-width: 1320px;
+}
+
+/* HEADER */
+#header {
+    background-color: #000;
+    .top-header {
+        overflow: hidden;
+        padding: 10px 0;
+        ul {
+            padding: 0;
+            margin: 0;
+            text-align: right;
+            li {
+                display: inline-block;
+                color: #FFF;
+                font-weight: 800;
+                font-size: 14px;
+                margin-right: 30px;
+                &:last-child { margin-right: 0; }
+                img {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    nav {
+        align-items: flex-end;
+        button {
+            color: #FFF;
+            padding: 0;
+            font-size: 36px;
+            &:focus {
+                outline: 0;
+                box-shadow: none;
+                border: 0;
+            }
+        }
+        .navbar-brand {
+            margin-right: 30px;
+            img { max-width: 50px; }
+        }
+        #mainmenu {
+            ul {
+                @include respond-down(sm) {
+                    text-align: right;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                }
+                li {
+                    margin-right: 30px;
+                    @include respond-down(sm) { margin-right: 0; }
+                    &:last-child { margin-right: 0; }
+                    a {
+                        color: #FFF;
+                        font-weight: 800;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* MAIN */
+#main {
+    margin-top: 50px;
+    margin-bottom: 150px;
+    form {
+        .has-error {
+            .error-message {
+                color: #cd3c14;
+                font-weight: 700;
+                font-size: 14px;
+                margin-bottom: 2px;
+            }
+            input {
+                border-color: #cd3c14;
+            }
+        }
+        .form-group {
+            position: relative;
+            max-width: 425px;
+            .eye {
+                position: absolute;
+                right: 10px;
+                bottom: 8px;
+                font-size: 22px;
+                cursor: pointer;
+                z-index: 999999;
+            }
+        }
+        .zz {
+            margin-bottom: 20px;
+            display: flex;
+            .symbol {
+                margin-right: 20px;
+            }
+            .content {
+                flex-grow: 1;
+                .email {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                a {
+                    display: inline-block;
+                    margin-top: 30px;
+                    color: #000;
+                    text-decoration: underline;
+                }
+            }
+        }
+        legend {
+            color: #000;
+            font-weight: 700;
+            font-size: 32px;
+            @include respond-down(sm) {
+                border-bottom: 1px solid #DDDDDD;
+                font-size: 24px;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+        }
+        label {
+            color: #000;
+            font-size: 16px;
+            font-weight: 700;
+            overflow: hidden;
+            display: block;
+            width: 100%;
+            max-width: 425px;
+            img { float: right; }
+        }
+        input[type="text"],input[type="password"] {
+            border: 2px solid #ccc;
+            border-radius: 0;
+            max-width: 425px;
+            height: 50px;
+            color: #000;
+            font-weight: 700;
+            font-size: 15px;
+            &::-webkit-input-placeholder { font-weight: 700; color: #666; font-size: 15px; }
+            &:-ms-input-placeholder { font-weight: 700; color: #666; font-size: 15px; }
+            &::placeholder { font-weight: 700; color: #666; font-size: 15px; }
+            &:focus {
+                border-color: #999999;
+                box-shadow: none;
+                outline: 0;
+            }
+        }
+        .form-check {
+            label {
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+        button {
+            opacity: 0;
+            background-color: #000;
+            color: #FFF;
+            font-weight: 700;
+            border: 2px solid #000;
+            height: 50px;
+            width: 135px;
+            border-radius: 0 !important;
+            &:hover {
+                background-color: transparent;
+                color: #000;
+            }
+            &:focus {
+                border-radius: 0 !important;
+            }
+            &.btnn {
+                background-color: #F16E00;
+                border: 2px solid #F16E00;
+                &:hover {
+                    background-color: #000;
+                    color: #FFF;
+                    border: 2px solid #000;
+                }
+            }
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            margin-top: 50px;
+            li {
+                color: #000;
+                font-weight: 700;
+                list-style-type: none;
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+/* GREY SECTION */
+#grey-section {
+    background-color: #DCDCDC;
+    height: 150px;
+    width: 100%;
+}
+
+/* FOOTER */
+#footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #000;
+    hr {
+        background: #666;
+    }
+    ul.list1 {
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-block;
+            color: #FFF;
+            font-weight: 700;
+            font-size: 16px;
+            margin-right: 20px;
+            &:last-child { margin-right: 0; }
+            img { margin-right: 5px; }
+        }
+    }
+    ul.list2 {
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-block;
+            color: #FFF;
+            font-size: 14px;
+            margin-right: 20px;
+            &:last-child { margin-right: 0; }
+        }
+    }
+}
+
+#header2 {
+    background-color: #FFF;
+    font-weight: 700;
+    color: #000;
+    font-size: 36px;
+    padding: 10px 0;
+    img { vertical-align: baseline; }
+}
+
+#main2 {
+    margin: 50px 0;
+    .logos {
+        display: flex;
+        align-items: center;
+        .left {
+            flex-grow: 1;
+            font-weight: 700;
+            font-size: 16px;
+            img { margin-right: 10px; vertical-align: sub; }
+        }
+    }
+    .details-box {
+        background-color: #FFF;
+        padding: 50px;
+        h3 {
+            color: #000;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            > span {
+                color: #f16e00;
+                font-size: 36px;
+            }
+        }
+        label {
+            text-align: right;
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            @include respond-down(md) { justify-content: flex-start; }
+            span { color: #F16E00; font-size: 12px; margin-left: 5px; }
+        }
+        input[type="text"],input[type="password"], select {
+            border: 2px solid #ccc;
+            border-radius: 0;
+            max-width: 425px;
+            height: 40px;
+            color: #000;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 4px;
+            &::-webkit-input-placeholder { font-weight: 700; color: #666; font-size: 15px; }
+            &:-ms-input-placeholder { font-weight: 700; color: #666; font-size: 15px; }
+            &::placeholder { font-weight: 700; color: #666; font-size: 15px; }
+            &:focus {
+                border-color: #999999;
+                box-shadow: none;
+                outline: 0;
+            }
+            &.has-error { border-color: #dc3c14 !important; }
+        }
+    }
+    .btns {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        p {
+            flex-grow: 1;
+            margin-bottom: 0;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        button {
+            background-color: #FF7900;
+            color: #FFF;
+            font-weight: 700;
+            height: 40px;
+            border-radius: 0 !important;
+            border: 0;
+            padding: 7px 20px;
+            &:focus {
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.loader {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.lds-spinner {
+  color: official;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: #FF7900;
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
